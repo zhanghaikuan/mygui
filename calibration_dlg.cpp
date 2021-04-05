@@ -23,12 +23,14 @@ void calibration_dlg::on_deleteButton_clicked()
 
 }
 
-void calibration_dlg::on_pushButton_4_clicked()
+
+
+void calibration_dlg::on_resetButton_clicked()
 {
 
 }
 
-void calibration_dlg::on_pushButton_3_clicked()
+void calibration_dlg::on_doneButton_clicked()
 {
 
 }

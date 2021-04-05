@@ -20,9 +20,9 @@ private slots:
 
     void on_deleteButton_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_resetButton_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_doneButton_clicked();
 
 private:
     Ui::calibration_dlg *ui;

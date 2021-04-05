@@ -1,6 +1,7 @@
 #include "function_setting_dlg.h"
 #include "ui_function_setting_dlg.h"
 #include <QDebug>
+#include<string>
 function_setting_dlg::function_setting_dlg(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::function_setting_dlg)
@@ -123,8 +124,8 @@ void function_setting_dlg::on_cancle_button_clicked()
 {
       standItemModel->setHeaderData(1, Qt::Horizontal, QStringLiteral("ZAxis/2"));
       auto item = standItemModel->item(1,1);
-      auto data= item->data(0).toDouble();
-      qDebug()<< data;
-      item->setData(QVariant(data/2.0),0);
-      standItemModel->setItem(1, 1, item);
+      auto data= item->data(0).toString();
+     std::string str=  data.toStdString();
+//      item->setData(QVariant(data/2.0),0);
+//      standItemModel->setItem(1, 1, item);
 }
