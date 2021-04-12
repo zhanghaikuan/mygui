@@ -23,6 +23,8 @@ private slots:
     void on_resetButton_clicked();
 
     void on_doneButton_clicked();
+ signals:
+    void calibration_change(QString set);
 
 private:
     Ui::calibration_dlg *ui;

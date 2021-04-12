@@ -32,5 +32,5 @@ void calibration_dlg::on_resetButton_clicked()
 
 void calibration_dlg::on_doneButton_clicked()
 {
-
+   emit  calibration_change("www");
 }

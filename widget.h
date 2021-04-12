@@ -39,17 +39,24 @@ private slots:
     void on_printButton_clicked();
 
     void on_clearButton_clicked();
-
+    void on_measureButton_clicked();
 
 
     void on_kinfeStickSelection_currentIndexChanged(int index);
 
     void on_kinfeSelection_currentIndexChanged(int index);
 
-    void on_tableView_clicked(const QModelIndex &index);
+private slots:
+       void seting_metric_change(QString str);
+        void seting_dianeter_change(QString str);
+        void seting_data_change(QString str);
+        void calibration_change(QString set);
+
 
 private:
     Ui::Widget *ui;
     QStandardItemModel *standItemModel;
+    function_setting_dlg *set_dlg;
+     calibration_dlg* c_dlg;
 };
 #endif // WIDGET_H

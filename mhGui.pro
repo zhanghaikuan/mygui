@@ -19,11 +19,13 @@ SOURCES += \
     calibration_dlg.cpp \
     function_setting_dlg.cpp \
     main.cpp \
+    myLabel.cpp \
     widget.cpp
 
 HEADERS += \
     calibration_dlg.h \
     function_setting_dlg.h \
+    myLabel.h \
     widget.h
 
 FORMS += \

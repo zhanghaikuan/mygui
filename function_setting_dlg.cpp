@@ -60,6 +60,7 @@ void function_setting_dlg::setLineValue(int value)
   int pos = ui->Brightness_SLIDER->value();
   QString str = QString("%1").arg(pos);
   ui->Brightness_show->setText(str);
+  emit datachange("Brightness_SLIDER");
 }
 void function_setting_dlg::setContrastValue(int value)
 {

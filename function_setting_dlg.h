@@ -31,6 +31,11 @@ private slots:
    void on_LinearCompensation_CHECK_clicked();
 
    void on_cancle_button_clicked();
+signals:
+   void  datachange(QString string);
+   void signalFunctionSetting_Dianeter(QString str);
+   void signalFunctionSetting_Metric(QString str);
+
 
 private:
     Ui::function_setting_dlg *ui;

@@ -52,15 +52,32 @@ Widget::Widget(QWidget *parent)
             standItemModel->setItem(i, 1, standItem2);
             //表格第i行，第1列添加一项内容
         }
-        ui->tableView->setModel(standItemModel);
+        ui->_knivesNumberListCtrl->setModel(standItemModel);
+        set_dlg=new function_setting_dlg();
+       set_dlg->setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);
+    connect(set_dlg,SIGNAL(datachange(QString )),this,SLOT(seting_data_change(QString)));
+     c_dlg = new calibration_dlg( );
+     c_dlg->hide();
+    connect(c_dlg,SIGNAL(calibration_change(QString )),this,SLOT(calibration_change(QString)));
+
+
 }
 
 Widget::~Widget()
 {
+    delete set_dlg;
     delete ui;
 }
-
-
+void Widget::seting_metric_change(QString str){}
+void Widget::seting_dianeter_change(QString str){}
+void Widget::calibration_change(QString str)
+{
+    qDebug()<< "calibration_change ";
+}
+void Widget::seting_data_change(QString str)
+{
+    qDebug()<< str;
+}
 void Widget::on_centerPresetButton_clicked()
 {
 
@@ -73,15 +90,14 @@ void Widget::on_definitionAdjustButton_clicked()
 
 void Widget::on_calibrationButton_clicked()
 {
- calibration_dlg* c_dlg =  new calibration_dlg();
+
  c_dlg->setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);
  c_dlg->show();
 }
 
 void Widget::on_functionSetButton_clicked()
 {
-  function_setting_dlg *set_dlg=new function_setting_dlg();
-  set_dlg->setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);
+
   set_dlg->show();
 }
 
@@ -125,7 +141,12 @@ void Widget::on_kinfeSelection_currentIndexChanged(int index)
 
 }
 
-void Widget::on_tableView_clicked(const QModelIndex &index)
+//void Widget::on_tableView_clicked(const QModelIndex &index)
+//{
+//    qDebug()<< index;
+//}
+
+void Widget::on_measureButton_clicked()
 {
-    qDebug()<< index;
+
 }
